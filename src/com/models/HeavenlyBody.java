@@ -6,7 +6,7 @@ import java.util.Set;
 public class HeavenlyBody {
     private String name;
     private double orbitalPeriod;
-    private Set<HeavenlyBody> satellites;
+    private final Set<HeavenlyBody> satellites;
 
     public HeavenlyBody(String name, double orbitalPeriod) {
         this.name = name;

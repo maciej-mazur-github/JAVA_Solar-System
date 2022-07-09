@@ -6,8 +6,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class SolarSystem {
-    private Map<String, HeavenlyBody> solarSystem = new HashMap<>();
-    private Set<HeavenlyBody> planets = new HashSet<>();
+    private final Map<String, HeavenlyBody> solarSystem = new HashMap<>();
+    private final Set<HeavenlyBody> planets = new HashSet<>();
 
     public SolarSystem() {
         HeavenlyBody tempBody = new HeavenlyBody("Earth", 365);
@@ -59,6 +59,7 @@ public class SolarSystem {
         for(HeavenlyBody planet : planets) {
             System.out.print(planet.getName() + "\t");
         }
+        System.out.println();
     }
 
     public void showMoonsOfPlanet(String planet) {
@@ -86,6 +87,8 @@ public class SolarSystem {
         for(HeavenlyBody moon : allMoons) {
             System.out.println("\t" + moon.getName());
         }
+
+        System.out.println();
     }
 
 
@@ -107,5 +110,7 @@ public class SolarSystem {
                 }
             }
         }
+
+        System.out.println();
     }
 }
