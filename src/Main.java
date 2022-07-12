@@ -9,5 +9,7 @@ public class Main {
         solarSystem.showAllHeavenlyBodies();
         System.out.println("****************************************");
         solarSystem.showAllMoons();
+        System.out.println("****************************************");
+        solarSystem.showMoonsOfPlanet("Mars");
     }
 }

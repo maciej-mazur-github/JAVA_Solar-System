@@ -35,6 +35,8 @@ public class SolarSystem {
         tempBody.addMoon(tempMoon);
         tempMoon = new HeavenlyBody("Callisto", 16.7);
         tempBody.addMoon(tempMoon);
+        tempMoon = new HeavenlyBody("Ganymede", 7.1);
+        tempBody.addMoon(tempMoon);
 
 
         tempBody = new HeavenlyBody("Saturn", 10759);
@@ -63,9 +65,15 @@ public class SolarSystem {
     }
 
     public void showMoonsOfPlanet(String planet) {
+        if(!solarSystem.containsKey(planet)) {
+            System.out.println("There is currently no planet " + planet + " in this Solar System");
+            return;
+        }
         Set<HeavenlyBody> moons = solarSystem.get(planet).getSatellites();
 
-        if(moons != null) {
+        if(!moons.isEmpty()) {
+            System.out.println("Moons of planet " + planet + " are:");
+
             for(HeavenlyBody moon : moons) {
                 System.out.print(moon.getName() + "\t");
             }
@@ -94,7 +102,7 @@ public class SolarSystem {
 
     public void showAllHeavenlyBodies() {
         System.out.println("All Solar System heavenly bodies:");
-        Set<HeavenlyBody> moons = new HashSet<>();
+        Set<HeavenlyBody> moons;
 
         for(HeavenlyBody planet : planets) {
             System.out.println("\t" + planet.getName());

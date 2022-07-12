@@ -27,4 +27,33 @@ public class HeavenlyBody {
     Set<HeavenlyBody> getSatellites() {
         return new HashSet<>(satellites);
     }
+
+    public double getOrbitalPeriod() {
+        return orbitalPeriod;
+    }
+
+    @Override
+    public final int hashCode() {
+        int prime = 57;
+        int hash = prime + name.hashCode();
+        hash += prime + (int)orbitalPeriod;
+        hash += prime + satellites.hashCode();
+
+        return hash;
+    }
+
+    @Override
+    public final boolean equals(Object obj) {
+        if(this == obj) {
+            return true;
+        }
+
+        if(obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        return (this.name.equals(((HeavenlyBody) obj).getName())
+                && this.orbitalPeriod == ((HeavenlyBody) obj).getOrbitalPeriod()
+                && this.satellites.equals(((HeavenlyBody) obj).getSatellites()));
+    }
 }
